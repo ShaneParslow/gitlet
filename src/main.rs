@@ -1,4 +1,5 @@
 mod ops;
+mod util;
 
 use std::env;
 
@@ -8,7 +9,16 @@ fn main() {
         println!("Not enough args!");
         return;
     }
+
+    let op: &str = args[1].as_str();
+    if !util::is_repo() && op != "init" {
+        println!("Unititialized repository!");
+        return;
+    }
     match args[1].as_str() {
+        "add" => ops::add(),
+        "branch" => ops::branch(),
+        "init" => ops::init(),
         "status" => ops::status(),
         _ => println!("Unknown option"),
     }

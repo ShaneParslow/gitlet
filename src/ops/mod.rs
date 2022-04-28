@@ -1,10 +1,12 @@
-//mod status;
-
 pub fn add() {
     return;
 }
 
 pub fn branch() {
+    return;
+}
+
+pub fn init() {
     return;
 }
 
