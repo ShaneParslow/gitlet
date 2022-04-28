@@ -1,3 +1,5 @@
+mod ops;
+
 use std::env;
 
 fn main() {
@@ -7,7 +9,7 @@ fn main() {
         return;
     }
     match args[1].as_str() {
-        "status" => println!("got the status"),
+        "status" => ops::status(),
         _ => println!("Unknown option"),
     }
     return;
