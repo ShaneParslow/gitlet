@@ -7,6 +7,7 @@ pub fn create_dirs() {
     fs::create_dir(".gitlet/blobs").expect("Could not create blobs dir");
     fs::create_dir(".gitlet/branches").expect("Could not create branches dir");
     fs::create_dir(".gitlet/commits").expect("Could not create commits dir");
+    fs::create_dir(".gitlet/staging").expect("Could not create staging dir");
 }
 
 pub fn make_init_commit() -> Commit {
