@@ -1,3 +1,5 @@
+mod blob;
+mod commit;
 mod ops;
 mod util;
 
@@ -15,7 +17,7 @@ fn main() {
         println!("Not in an initialized Gitlet directory.");
         return;
     }
-    match args[1].as_str() {
+    match op {
         "add" => ops::add(),
         "branch" => ops::branch(),
         "init" => ops::init(),
