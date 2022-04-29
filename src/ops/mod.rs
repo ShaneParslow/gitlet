@@ -1,8 +1,9 @@
 use std::fs;
+use std::path::Path;
 use std::time::UNIX_EPOCH;
 
-use crate::util;
 use crate::commit::Commit;
+use crate::util;
 
 /* Guaranteed to be in a working directory with a .gitlet dir, with the exception of init */
 
@@ -19,9 +20,14 @@ pub fn branch() {
 pub fn init() {
     if util::is_repo() {
         println!("A Gitlet version-control system already exists in the current directory.");
+        return;
     }
     create_dirs();
-    let init_commit: Commit = Commit::new_from_time(UNIX_EPOCH, String::from("initial commit"), None);
+    let init_commit: Commit =
+        Commit::new_from_time(UNIX_EPOCH, String::from("initial commit"), None);
+    //init_commit.serialize();
+    let second_commit = Commit::new(String::from("second commit lol "), None);
+    //second_commit.serialize();
 }
 
 fn create_dirs() {
