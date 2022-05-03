@@ -12,5 +12,5 @@ pub fn create_dirs() {
 
 pub fn make_init_commit() -> Commit {
     let description = String::from("initial commit");
-    Commit::new_from_time(UNIX_EPOCH, description, None)
+    Commit::new_from_time(UNIX_EPOCH, description, None, None)
 }
